@@ -1,4 +1,7 @@
 <resources>
-    <string name="app_name">Demo_Maps</string>
-    <string name="title_activity_maps">Map</string>
+    <string name="app_name">Sifflet</string>
+    <string name="map_type_normal">Normal</string>
+    <string name="map_type_terrain">Terreno</string>
+    <string name="map_type_satellite">Satélite</string>
+    <string name="map_type_hybrid">Híbrido</string>
 </resources>
