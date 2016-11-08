@@ -34,7 +34,7 @@ public class PartidaEscolhida extends AppCompatActivity {
             nome_partida_selecionada.setText(nome);
     }
     public void gotoUserprofile(View view){
-        Intent j = new Intent(PartidaEscolhida.this,);
+        Intent j = new Intent(PartidaEscolhida.this,Userprofile.class);
         startActivity(j);
     }
 

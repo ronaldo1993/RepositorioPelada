@@ -43,7 +43,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Userprofile"></activity>
+        <activity android:name=".Userprofile" />
+        <activity android:name=".CriarPartida"></activity>
     </application>
 
 </manifest>

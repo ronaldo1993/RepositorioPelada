@@ -315,6 +315,10 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
         Location lastLocation = LocationServices.FusedLocationApi.getLastLocation(mGoogleApiClient);
         setMyMarker("Eu", lastLocation.getLatitude(),lastLocation.getLongitude());
     }
+    public void createMatch(View view){
+        Intent k = new Intent(MainActivity.this,CriarPartida.class);
+        startActivity(k);
+    }
 
     @Override
     public void onConnectionSuspended(int i) {

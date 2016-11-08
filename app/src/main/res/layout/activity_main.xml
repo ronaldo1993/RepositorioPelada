@@ -24,8 +24,7 @@
         android:onClick="geoLocate"
         android:layout_gravity="center_horizontal"/>
 
-    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:tools="http://schemas.android.com/tools"
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
@@ -52,6 +51,8 @@
 
         <ImageView
             android:layout_width="wrap_content"
+            android:id="@+id/newmatchbtn"
+            android:onClick="createMatch"
             android:layout_height="wrap_content"
             android:src="@drawable/plus"
             android:layout_marginRight="-500dp"
@@ -59,4 +60,4 @@
             android:layout_centerVertical="true"
             android:layout_alignParentEnd="true" />
     </RelativeLayout>
-    </LinearLayout>
+</LinearLayout>
