@@ -3,6 +3,7 @@ package com.example.ronaldo.googlemapsaplication;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 
@@ -32,5 +33,11 @@ public class PartidaEscolhida extends AppCompatActivity {
         }
             nome_partida_selecionada.setText(nome);
     }
+    public void gotoUserprofile(View view){
+        Intent j = new Intent(PartidaEscolhida.this,);
+        startActivity(j);
+    }
+
+
 }
 
