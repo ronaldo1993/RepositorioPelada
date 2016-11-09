@@ -37,4 +37,5 @@ public class Partida {
     public void inserir_intervalo(int value){
         this.intervalo_do_dia = value;
     }
+
 }

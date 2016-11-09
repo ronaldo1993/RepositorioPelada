@@ -7,11 +7,13 @@ import android.os.Bundle;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.view.View;
 
 public class PartidaEscolhida extends AppCompatActivity {
     String nome_jogadores[] = {"Joao", "Everton", "Guilherme"};
     String nome_partidas[] = {"Partida em Assu", "Partida em Natal","Partida em Ipanguaçu"};
     String latitudes_longitudes[][]= {{"-5.5775119","-36.9147857"},{"-5.7792569","-35.200916"},{"-5.5088647","-36859794"}};
+
     Localizacoes l;
     java.text.SimpleDateFormat mydate;
 
@@ -193,6 +195,10 @@ public class PartidaEscolhida extends AppCompatActivity {
         l.inserir_local("-5.8512958","-35.2044984",gamesCapim);
         l.inserir_local("-5.7592423","-35.2510852",gamesZonaNorte);
         l.inserir_local("-5.7494198","-35.2608199",gamesIFRN);
+    }
+    public void gotoUserprofile(View view){
+        Intent j = new Intent(PartidaEscolhida.this,Userprofile.class);
+        startActivity(j);
     }
 }
 

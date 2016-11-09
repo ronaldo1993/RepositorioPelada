@@ -54,7 +54,9 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
         super.onCreate(savedInstanceState);
 
         if (googleServicesAvailable()) {
+
             Toast.makeText(this, "Perfeito!", Toast.LENGTH_LONG).show();
+
             setContentView(R.layout.activity_main);
             initMap();
         } else {
@@ -316,6 +318,11 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
         setMyMarker("Eu", lastLocation.getLatitude(),lastLocation.getLongitude());
     }
 
+    public void createMatch(View view){
+        Intent k = new Intent(MainActivity.this,CriarPartida.class);
+        startActivity(k);
+    }
+
     @Override
     public void onConnectionSuspended(int i) {
 
@@ -342,4 +349,5 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
         Intent intent = new Intent(MainActivity.this, ProcurarPartidas.class);
         startActivity(intent);
     }
+
 }

@@ -31,7 +31,17 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        <activity android:name=".MainActivity" />
+
+        <meta-data
+            android:name="com.google.android.maps.v2.API_KEY"
+            android:value="AIzaSyDaGv7VEDQYK2aGHWH6vJgA9__7ZFA0ZVE" />
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+
+        <activity android:name=".PartidaEscolhida" />
+        <activity android:name=".TelaLogin">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -51,6 +61,10 @@
         <activity
             android:name=".Login"
             android:label="@string/title_activity_login" />
+
+        <activity android:name=".Userprofile" />
+        <activity android:name=".CriarPartida"></activity>
+
     </application>
 
 </manifest>

@@ -6,9 +6,11 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 
+
 /**
  * Created by ronaldo on 03/11/2016.
  */
+
 public class Partidas {
     HashMap<SimpleDateFormat, List<Partida>> dias_inteiros = new HashMap<SimpleDateFormat, List<Partida>>();
 
@@ -44,6 +46,7 @@ public class Partidas {
                     dias_inteiros.get(data).remove(i);
             }
             dias_inteiros.remove(data);
+
             return true;
         }
         return false;
@@ -58,4 +61,5 @@ public class Partidas {
         return nome;
     }
     /* List<Jogador> */
+
 }
