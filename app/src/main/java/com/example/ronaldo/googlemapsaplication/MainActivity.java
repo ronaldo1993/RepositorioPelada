@@ -312,7 +312,7 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
         }
         LocationServices.FusedLocationApi.requestLocationUpdates(mGoogleApiClient, mLocationRequest, this);
         Location lastLocation = LocationServices.FusedLocationApi.getLastLocation(mGoogleApiClient);
-        setMyMarker("Eu", lastLocation.getLatitude(),lastLocation.getLongitude());
+        //setMyMarker("Eu", lastLocation.getLatitude(),lastLocation.getLongitude());
     }
 
     public void createMatch(View view){
