@@ -52,12 +52,9 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
 
         if (googleServicesAvailable()) {
-
-            Toast.makeText(this, "Perfeito!", Toast.LENGTH_LONG).show();
-
-            setContentView(R.layout.activity_main);
             initMap();
         } else {
             //no google maps layout
