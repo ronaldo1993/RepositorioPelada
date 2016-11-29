@@ -10,6 +10,7 @@ import android.os.Build;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.ActivityCompat;
+import android.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -45,6 +46,7 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
     GoogleApiClient mGoogleApiClient;
     Marker marker;
     Marker mymarker;
+    ActionBar actionBar;
 
 
     /*Se os servicos do google estiverem disponiveis mostra mensagem 'perfect' e chama a activity_main
@@ -54,18 +56,20 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        if (googleServicesAvailable()) {
+        actionBar = getActionBar();
+
+        /*if (googleServicesAvailable()) {
             initMap();
         } else {
             //no google maps layout
-        }
+        }*/
     }
 
     /*Pega o frament google maps definido em activity_main.xml e atribue ao objeto mapFragment,
     e inicializa o sistema de mapas*/
     private void initMap() {
-        MapFragment mapFragment = (MapFragment) getFragmentManager().findFragmentById(R.id.fragment);
-        mapFragment.getMapAsync(this);
+        //MapFragment mapFragment = (MapFragment) getFragmentManager().findFragmentById(R.id.fragment);
+        //mapFragment.getMapAsync(this);
     }
 
     /*Testa se o servicos google estao disponiveis*/
