@@ -78,9 +78,6 @@
         </activity>
 
         <activity android:name=".CriarPartida" android:label="Criar Partida">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".MainActivity" />
         </activity>
 
         <activity android:name=".CriarConta" android:label="Criar Conta">

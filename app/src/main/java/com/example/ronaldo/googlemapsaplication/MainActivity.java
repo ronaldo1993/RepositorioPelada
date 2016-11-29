@@ -56,13 +56,11 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        actionBar = getActionBar();
-
-        /*if (googleServicesAvailable()) {
+        if (googleServicesAvailable()) {
             initMap();
         } else {
             //no google maps layout
-        }*/
+        }
     }
 
     /*Pega o frament google maps definido em activity_main.xml e atribue ao objeto mapFragment,
@@ -274,8 +272,17 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
 
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
-            case R.id.sairDaConta:
-                this.finish();
+            case R.id.mapTypeHybrid:
+                mGoogleMap.setMapType(GoogleMap.MAP_TYPE_HYBRID);
+                break;
+            case R.id.mapTypeSatellite:
+                mGoogleMap.setMapType(GoogleMap.MAP_TYPE_SATELLITE);
+                break;
+            case R.id.mapTypeNormal:
+                mGoogleMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);
+                break;
+            case R.id.mapTypeTerrain:
+                mGoogleMap.setMapType(GoogleMap.MAP_TYPE_TERRAIN);
                 break;
             default:
                 break;
@@ -338,7 +345,8 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
     }
 
     public void pesquisar_partidas(View view) {
-
+        Intent intent = new Intent(MainActivity.this, ProcurarPartidas.class);
+        startActivity(intent);
     }
 
 }

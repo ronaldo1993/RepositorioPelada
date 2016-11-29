@@ -15,9 +15,11 @@ public class CriarConta extends AppCompatActivity {
     }
 
     public void criar_conta(View view) {
-        Toast.makeText(this, "Conta cadastrada com sucesso!", Toast.LENGTH_LONG).show();
-
         Intent i = new Intent(CriarConta.this, MainActivity.class);
         startActivity(i);
+    }
+
+    public void login(View view){
+        this.finish();
     }
 }
