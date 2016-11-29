@@ -17,4 +17,9 @@ public class TelaLogin extends AppCompatActivity {
         Intent i = new Intent(TelaLogin.this, MainActivity.class);
         startActivity(i);
     }
+
+    public void criar_conta(View view) {
+        Intent i = new Intent(TelaLogin.this, MainActivity.class);
+        startActivity(i);
+    }
 }

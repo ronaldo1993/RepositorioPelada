@@ -347,8 +347,7 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
     }
 
     public void pesquisar_partidas(View view) {
-        Intent intent = new Intent(MainActivity.this, ProcurarPartidas.class);
-        startActivity(intent);
+
     }
 
 }
