@@ -55,30 +55,39 @@
             android:name="com.google.android.gms.version"
             android:value="@integer/google_play_services_version" />
 
-        <activity android:name=".PartidaEscolhida">
+        <activity android:name=".PartidaEscolhida" android:label="Partida Escolhida">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".MainActivity" />
         </activity>
-        <activity android:name=".ProcurarPartidas">
+
+        <activity android:name=".ProcurarPartidas" android:label="Procurar Partidas">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".MainActivity" />
         </activity>
+
         <activity
             android:name=".Login"
             android:label="@string/title_activity_login" />
-        <activity android:name=".Userprofile">
+
+        <activity android:name=".Userprofile" android:label="Perfil">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".MainActivity" />
         </activity>
-        <activity android:name=".CriarPartida">
+
+        <activity android:name=".CriarPartida" android:label="Criar Partida">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".MainActivity" />
         </activity>
-        <activity android:name=".CriarConta"></activity>
+
+        <activity android:name=".CriarConta" android:label="Criar Conta">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".TelaLogin" />
+        </activity>
     </application>
 
 </manifest>

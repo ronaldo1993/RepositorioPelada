@@ -274,17 +274,8 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
 
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
-            case R.id.mapTypeHybrid:
-                mGoogleMap.setMapType(GoogleMap.MAP_TYPE_HYBRID);
-                break;
-            case R.id.mapTypeSatellite:
-                mGoogleMap.setMapType(GoogleMap.MAP_TYPE_SATELLITE);
-                break;
-            case R.id.mapTypeNormal:
-                mGoogleMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);
-                break;
-            case R.id.mapTypeTerrain:
-                mGoogleMap.setMapType(GoogleMap.MAP_TYPE_TERRAIN);
+            case R.id.sairDaConta:
+                this.finish();
                 break;
             default:
                 break;

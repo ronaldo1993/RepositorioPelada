@@ -1,13 +1,93 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/activity_criar_conta"
+    android:id="@+id/activity_tela_login"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.example.ronaldo.googlemapsaplication.CriarConta">
 
-</RelativeLayout>
+    <ImageView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        app:srcCompat="@drawable/sports"
+        android:id="@+id/backgroundimage"
+        android:scaleType="centerCrop"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center_vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center">
+            <TextView
+                android:text="Sifflet"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#FFF"
+                android:textSize="40dp"
+                android:textAllCaps="true"
+                android:id="@+id/tituloapp"/>
+
+            <EditText
+                android:layout_width="250dp"
+                android:layout_height="30dp"
+                android:inputType="textPersonName"
+                android:hint="Nome Completo"
+                android:gravity="center"
+                android:background="#FFF"
+                android:layout_marginTop="18dp"
+                android:id="@+id/usernametext" />
+
+            <EditText
+                android:layout_width="250dp"
+                android:layout_height="30dp"
+                android:inputType="textPassword"
+                android:hint="Cidade"
+                android:gravity="center"
+                android:background="#FFF"
+                android:layout_marginTop="15dp"/>
+            <EditText
+                android:layout_width="250dp"
+                android:layout_height="30dp"
+                android:inputType="textPassword"
+                android:hint="Bairro"
+                android:gravity="center"
+                android:background="#FFF"
+                android:layout_marginTop="15dp"/>
+            <EditText
+                android:layout_width="250dp"
+                android:layout_height="30dp"
+                android:inputType="textPassword"
+                android:hint="Usuário"
+                android:gravity="center"
+                android:background="#FFF"
+                android:layout_marginTop="15dp"/>
+            <EditText
+                android:layout_width="250dp"
+                android:layout_height="30dp"
+                android:inputType="textPassword"
+                android:hint="Senha"
+                android:gravity="center"
+                android:background="#FFF"
+                android:layout_marginTop="15dp"/>
+
+            <Button
+                android:text="Cadastrar"
+                android:onClick="criar_conta"
+                android:textColor="#111111"
+                android:background="#DDDDDD"
+                android:layout_width="250dp"
+                android:layout_height="30dp"
+                android:layout_marginTop="20dp"
+                android:id="@+id/loginbtn" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+</FrameLayout>
