@@ -18,7 +18,7 @@
         android:layout_centerHorizontal="true"
         android:id="@+id/habrating" />
 
-    <EditText
+    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:inputType="textPersonName"
@@ -36,7 +36,7 @@
         android:layout_alignStart="@+id/habrating"
         android:id="@+id/fairating" />
 
-    <EditText
+    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:inputType="textPersonName"
@@ -55,7 +55,15 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true" />
 
-    <EditText
+    <RatingBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/ponrating"
+        android:layout_below="@+id/pontext"
+        android:layout_alignStart="@+id/fairating"
+        android:numStars="5" />
+
+    <TextView
       android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:inputType="textPersonName"
@@ -66,14 +74,6 @@
             android:layout_weight="1"
         android:layout_below="@+id/userphoto"
         android:layout_centerHorizontal="true" />
-
-    <RatingBar
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/ponrating"
-        android:layout_below="@+id/pontext"
-        android:layout_alignStart="@+id/fairating"
-        android:numStars="5" />
 
 
 </RelativeLayout>
