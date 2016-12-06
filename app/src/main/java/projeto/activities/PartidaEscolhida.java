@@ -1,13 +1,12 @@
-package com.example.ronaldo.googlemapsaplication;
+package projeto.activities;
 
 import android.content.Intent;
-import android.icu.text.SimpleDateFormat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.widget.EditText;
 import android.widget.TextView;
-import android.widget.Toast;
 import android.view.View;
+
+import com.example.ronaldo.googlemapsaplication.R;
 
 public class PartidaEscolhida extends AppCompatActivity {
     String nome_jogadores[] = {"Joao", "Everton", "Guilherme"};

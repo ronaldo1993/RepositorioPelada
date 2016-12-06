@@ -1,4 +1,4 @@
-package com.example.ronaldo.googlemapsaplication;
+package projeto.activities;
 
 import android.app.DatePickerDialog;
 import android.content.DialogInterface;
@@ -10,6 +10,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
+
+import com.example.ronaldo.googlemapsaplication.R;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;

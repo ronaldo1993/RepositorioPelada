@@ -1,7 +1,9 @@
-package com.example.ronaldo.googlemapsaplication;
+package projeto.activities;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+
+import com.example.ronaldo.googlemapsaplication.R;
 
 public class Userprofile extends AppCompatActivity {
 

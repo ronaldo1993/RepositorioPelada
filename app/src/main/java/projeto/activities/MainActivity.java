@@ -1,9 +1,8 @@
-package com.example.ronaldo.googlemapsaplication;
+package projeto.activities;
 
 import android.app.Dialog;
 import android.content.Intent;
 import android.content.pm.PackageManager;
-import android.graphics.Bitmap;
 import android.location.Geocoder;
 import android.location.Location;
 import android.os.Build;
@@ -19,10 +18,10 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.ronaldo.googlemapsaplication.R;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.GoogleApiAvailability;
 import com.google.android.gms.common.api.GoogleApiClient;
-import com.google.android.gms.identity.intents.Address;
 import com.google.android.gms.location.LocationListener;
 import com.google.android.gms.location.LocationRequest;
 import com.google.android.gms.location.LocationServices;
@@ -319,7 +318,7 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
     }
 
     public void createMatch(View view){
-        Intent k = new Intent(MainActivity.this,CriarPartida.class);
+        Intent k = new Intent(MainActivity.this, CriarPartida.class);
         startActivity(k);
     }
 

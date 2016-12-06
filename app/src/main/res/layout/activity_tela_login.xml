@@ -5,7 +5,7 @@
     android:id="@+id/activity_tela_login"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.ronaldo.googlemapsaplication.TelaLogin">
+    tools:context="projeto.activities.TelaLogin">
 
     <ImageView
         android:layout_width="fill_parent"
@@ -55,7 +55,7 @@
 
             <Button
                 android:text="Log in"
-                android:onClick="logar"
+                android:onClick="efetuar_post_partida"
                 android:textColor="#111111"
                 android:background="#DDDDDD"
                 android:layout_width="250dp"
@@ -68,3 +68,4 @@
 
 
 </FrameLayout>
+    <!--android:onClick="logar"-->

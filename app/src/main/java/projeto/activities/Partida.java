@@ -1,4 +1,4 @@
-package com.example.ronaldo.googlemapsaplication;
+package projeto.activities;
 
 import java.util.HashMap;
 

@@ -1,4 +1,4 @@
-package com.example.ronaldo.googlemapsaplication;
+package projeto.activities;
 
 /**
  * Created by ronaldo on 08/11/2016.
