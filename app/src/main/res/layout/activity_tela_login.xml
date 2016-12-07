@@ -23,7 +23,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:gravity="center">
+            android:gravity="center"
+            android:weightSum="1">
             <TextView
                 android:text="Sifflet"
                 android:layout_width="wrap_content"
@@ -62,7 +63,27 @@
                 android:layout_height="30dp"
                 android:layout_marginTop="20dp"
                 android:id="@+id/loginbtn" />
+
+            <TextView
+                android:text="Not Registered?"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:textSize="22sp"
+                android:textColor="@android:color/holo_red_light"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/registerText"
+                android:layout_weight="0.82" />
+            <Button
+                android:text="Register"
+                android:gravity="center"
+                android:layout_width="195dp"
+                android:onClick="cadastrar"
+                android:layout_height="wrap_content"
+                android:id="@+id/registerbtn" />
         </LinearLayout>
+
+
 
     </LinearLayout>
 
