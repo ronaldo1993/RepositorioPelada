@@ -1,5 +1,8 @@
 package projeto.apiClient.Service;
 
+import java.util.List;
+
+import projeto.domain.Local;
 import projeto.domain.LoginResult;
 import projeto.domain.User;
 import retrofit2.Call;
@@ -27,4 +30,7 @@ public interface UserService {
 
     @POST("partida")
     Call<Void> register_partida(@Body projeto.domain.Partida body);
+
+    @GET("local")
+    Call<List<Local>> get_locais();
 }

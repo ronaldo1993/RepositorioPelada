@@ -34,9 +34,20 @@ import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 
 import java.io.IOException;
 import java.util.List;
+
+import projeto.apiClient.Service.UserService;
+import projeto.domain.Local;
+import projeto.domain.LoginResult;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
 
 public class MainActivity extends AppCompatActivity implements OnMapReadyCallback, GoogleApiClient.ConnectionCallbacks, GoogleApiClient.OnConnectionFailedListener, LocationListener {
 
@@ -44,6 +55,8 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
     GoogleApiClient mGoogleApiClient;
     Marker marker;
     Marker mymarker;
+    List<Local> todos_locais;
+    String nome_user;
 
 
     /*Se os servicos do google estiverem disponiveis mostra mensagem 'perfect' e chama a activity_main
@@ -52,6 +65,7 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        nome_user = getIntent().getStringExtra("nome");
         if (googleServicesAvailable()) {
 
             Toast.makeText(this, "Perfeito!", Toast.LENGTH_LONG).show();
@@ -99,12 +113,24 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
                 @Override
                 public void onInfoWindowClick(Marker marker) {
                     Intent intent = new Intent(MainActivity.this, PartidaEscolhida.class);
+                    String lat_aux = Double.toString(marker.getPosition().latitude);
+                    String lng_aux = Double.toString(marker.getPosition().longitude);
 
                     //passando informacoes do marcador selecionado para a proxima activity(partida selecionada)
 
-                    intent.putExtra("latitude", Double.toString(marker.getPosition().latitude));
-                    intent.putExtra("longitude", Double.toString(marker.getPosition().longitude));
+                    //intent.putExtra("latitude", Double.toString(marker.getPosition().latitude));
+                    //intent.putExtra("longitude", Double.toString(marker.getPosition().longitude));
 
+                    for(int i=0;i<todos_locais.size();i++){
+                        if(todos_locais.get(i).latitude.equals(lat_aux) && todos_locais.get(i).longitude.equals(lng_aux)){
+
+                            intent.putExtra("id_local", todos_locais.get(i).id_local);
+                            intent.putExtra("nome_user", nome_user);
+                            intent.putExtra("nome_local",todos_locais.get(i).nome);
+
+                            i=todos_locais.size();
+                        }
+                    }
                     //inicia a activity para a partida selecionada
                     startActivity(intent);
                 }
@@ -161,41 +187,72 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
 
         Geocoder geo_aux = new Geocoder(this);
         List<android.location.Address> list = null;
-        try {
+        request_server_users();
 
-            list = geo_aux.getFromLocationName(location1, 1);
-            android.location.Address address = list.get(0);
 
-            double lat = address.getLatitude();
-            double lng = address.getLongitude();
-
-            String localidade1 = address.getLocality();
-            setMarker(localidade1,lat,lng);
-
-            list = geo_aux.getFromLocationName(location2, 1);
-            address = list.get(0);
-
-            lat = address.getLatitude();
-            lng = address.getLongitude();
-
-            String localidade2 = address.getLocality();
-            setMarker(localidade2,lat,lng);
-
-            list = geo_aux.getFromLocationName(location3, 1);
-            address = list.get(0);
-
-            lat = address.getLatitude();
-            lng = address.getLongitude();
-
-            String localidade3 = address.getLocality();
-            setMarker(localidade3,lat,lng);
-
-        } catch (IOException e) {
-            Toast.makeText(this,"nao passou",Toast.LENGTH_LONG).show();
-            e.printStackTrace();
-        }
     }
 
+    /* list = geo_aux.getFromLocationName(location1, 1);
+           android.location.Address address = list.get(0);
+
+           double lat = address.getLatitude();
+           double lng = address.getLongitude();
+
+           String localidade1 = address.getLocality();
+           setMarker(localidade1,lat,lng);
+
+           list = geo_aux.getFromLocationName(location2, 1);
+           address = list.get(0);
+
+           lat = address.getLatitude();
+           lng = address.getLongitude();
+
+           String localidade2 = address.getLocality();
+           setMarker(localidade2,lat,lng);
+
+           list = geo_aux.getFromLocationName(location3, 1);
+           address = list.get(0);
+
+           lat = address.getLatitude();
+           lng = address.getLongitude();
+
+           String localidade3 = address.getLocality();
+           setMarker(localidade3,lat,lng);*/
+    public void request_server_users(){
+        Gson gson = new GsonBuilder()
+                .setDateFormat("yyyy-MM-dd'T'HH:mm:ssZ")
+                .create();
+
+        Retrofit retrofit = new Retrofit.Builder()
+                .baseUrl(UserService.BASE_URL)
+                .addConverterFactory(GsonConverterFactory.create(gson))
+                .build();
+
+        UserService UserAPI = retrofit.create(UserService.class);
+        Call<List<Local>> getLogin = UserAPI.get_locais();
+
+        getLogin.enqueue(new Callback<List<Local>>() {
+            @Override
+            public void onResponse(Call<List<Local>> call, Response<List<Local>> response) {
+                if(response.isSuccessful()){
+                    todos_locais = response.body();
+
+                    for (int i = 0; i < todos_locais.size(); i++) {
+                        setMarker(todos_locais.get(i).nome, Double.parseDouble(todos_locais.get(i).latitude), Double.parseDouble(todos_locais.get(i).longitude));
+                    }
+
+                }
+                else{
+                    Toast.makeText(getApplicationContext(),"Erro na resposta do servidor",Toast.LENGTH_LONG).show();
+                }
+            }
+
+            @Override
+            public void onFailure(Call<List<Local>> call, Throwable t) {
+                Toast.makeText(getApplicationContext(),"Sem acesso ao servidor",Toast.LENGTH_LONG).show();
+            }
+        });
+    }
 /*    private void goToLocation(double lat, double lng) {
         LatLng ll = new LatLng(lat, lng);
         CameraUpdate update = CameraUpdateFactory.newLatLng(ll);
@@ -317,10 +374,6 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
         setMyMarker("Eu", lastLocation.getLatitude(),lastLocation.getLongitude());
     }
 
-    public void createMatch(View view){
-        Intent k = new Intent(MainActivity.this, CriarPartida.class);
-        startActivity(k);
-    }
 
     @Override
     public void onConnectionSuspended(int i) {
