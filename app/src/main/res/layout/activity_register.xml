@@ -11,20 +11,20 @@
     tools:context="projeto.activities.RegisterActivity">
 
     <TextView
-        android:text="Register"
+        android:text="@string/register"
         android:gravity="center"
         android:textAllCaps="true"
-        android:textSize="44dp"
+        android:textSize="44sp"
         android:textStyle="bold"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/RegisterTitle"
-        android:layout_weight="1" />
+        android:id="@+id/RegisterTitle" />
 
     <TextView
         android:layout_width="match_parent"
-        android:textSize="20dp"
-        android:text="Username"
+        android:textSize="20sp"
+        android:text="@string/username"
+        android:layout_marginBottom="10dp"
         android:gravity="center"
         android:layout_height="wrap_content"
         android:id="@+id/textView"
@@ -39,10 +39,60 @@
         android:inputType="textPersonName"
         android:ems="10"
         android:layout_below="@+id/textView"
+        android:layout_marginBottom="10dp"
         android:layout_centerHorizontal="true"
-        android:id="@+id/editText3" />
+        android:id="@+id/usernametext" />
 
+    <TextView
+        android:text="@string/password"
+        android:textSize="20sp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:id="@+id/password"
+        android:layout_marginBottom="10dp"
+        android:layout_below="@+id/usernametext"/>
 
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPassword"
+        android:ems="10"
+        android:layout_below="@+id/password"
+        android:layout_alignStart="@+id/usernametext"
+        android:background="#DDD"
+        android:id="@+id/ptext"
+        android:layout_marginBottom="10dp"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Cellphone Number"
+        android:textSize="20sp"
+        android:gravity="center"
+        android:layout_below="@id/ptext"
+        android:layout_alignStart="@id/password"
+        android:layout_marginBottom="10dp"
+        android:id="@+id/cnumber"/>
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#ddd"
+        android:inputType="phone"
+        android:ems="10"
+        android:layout_below="@+id/cnumber"
+        android:layout_alignStart="@+id/ptext"
+        android:id="@+id/tntext" />
+
+    <Button
+        android:text="Register"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tntext"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="44dp"
+        android:onClick="confirm_register"
+        android:id="@+id/rgstbtn" />
 
 
 </RelativeLayout>
